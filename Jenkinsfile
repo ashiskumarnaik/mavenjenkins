@@ -1,41 +1,41 @@
 pipeline 
 {
-    agent any
+    agent any 
 
-    stages 
+    stages
     {
-        stage('Build') 
+        stage ('Hello')
         {
-            steps 
-            {
-                echo 'Build App'
+            steps{
+            echo 'Hello World'
+            }
+        }
+        stage ('Build')
+        {
+            steps {
+            echo 'Build App'
+            }
+        }
+        stage ('Test')
+        {
+            steps {
+            echo 'Test App'
+            }
+        }
+        stage ('Deploy')
+        {
+            steps {
+            echo 'Deploy App'
             }
         }
 
-        stage('Test') 
-        {
-            steps 
-            {
-                echo 'Test App'
-            }
-        }
-
-        stage('Deploy') 
-        {
-            steps 
-            {
-                echo 'Deploy App'
-            }
-        }
     }
-
-    post
+    post 
     {
-
-    	always
-    	{
-    		emailext body: 'Summary', subject: 'Pipeline Status', to: 'selenium3bymukesh@gmail.com'
-    	}
+        always 
+        {
+            emailext body: 'summary', subject: 'pipeline status', to: 'ashishami2002@gmail.com'
+        }
 
     }
 }
